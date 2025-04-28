@@ -1,0 +1,65 @@
+# Firewall Fundamentals — TryHackMe Room Walkthrough
+
+Recently, I completed the **Firewall Fundamentals** room on TryHackMe to sharpen my understanding of different firewall types, rule configurations, and practical applications on both Windows and Linux systems. Here's a recap of what I learned:
+
+---
+
+## 🔥 Types of Firewalls
+
+### Stateless Firewall
+Think of this like a bouncer with short-term memory loss. It checks every packet against its rule set individually, without remembering anything about past traffic. It's fast and can filter a lot of traffic but doesn't have any context.
+
+### Stateful Firewall
+The opposite — like a bouncer with photographic memory. It remembers past connections and uses that information to make smarter decisions about what traffic to allow or block in the future.
+
+### Proxy Firewall
+If a bouncer not only checked IDs but also made you empty your pockets and go through a metal detector — that's a proxy firewall. It inspects the actual contents of packets (Layer 7 of the OSI model) and masks internal IPs to protect private networks.
+
+### Next-Generation Firewall (NGFW)
+The equivalent of airport security. It operates across Layers 3–7, offering deep packet inspection, intrusion prevention (IPS), behavioral analysis, and SSL/TLS traffic decryption — all while cross-referencing threat intelligence feeds to proactively block malicious traffic.
+
+---
+
+## 📜 Firewall Rules Basics
+
+Each firewall rule typically includes:
+- **Source Address:** Where the traffic is coming from.
+- **Destination Address:** Where it's headed.
+- **Port:** The specific port involved.
+- **Protocol:** How the communication happens (TCP, UDP, etc.).
+- **Action:** What to do with the traffic (Allow, Deny, Forward).
+- **Direction:** Whether the rule applies to incoming or outgoing traffic.
+
+### Three Common Actions
+- **Allow:** Let the traffic through.
+- **Deny:** Block the traffic.
+- **Forward:** Redirect the traffic to another network segment (e.g., forwarding all HTTP traffic to a specific web server).
+
+---
+
+## 🖥️ Working with Windows Defender Firewall
+
+- Walked through the Windows Defender Firewall interface.
+- Created a rule to **block all outgoing requests on ports 80 and 443** (preventing internet access).
+- Analyzed a VM with preconfigured rules to practice identifying and understanding real-world firewall rules.
+
+---
+
+## 🐧 Linux Firewalls: Netfilter, iptables, and UFW
+
+On Linux, **Netfilter** is the framework that firewall tools use. Some common utilities:
+
+- **iptables:** The classic, widely-used tool for packet filtering and NAT.
+- **nftables:** A modern successor to iptables with enhanced capabilities.
+- **firewalld:** A dynamic firewall manager using zones and pre-built rule sets.
+
+### UFW (Uncomplicated Firewall)
+UFW simplifies managing iptables rules. Some commands I practiced:
+
+```bash
+sudo ufw status           # Check firewall status
+sudo ufw enable           # Enable firewall
+sudo ufw default allow outgoing   # Allow all outgoing traffic by default
+sudo ufw deny 22/tcp      # Block incoming traffic on port 22 (SSH)
+sudo ufw status numbered  # View firewall rules with numbers
+sudo ufw delete [number]  # Delete a rule by its number
