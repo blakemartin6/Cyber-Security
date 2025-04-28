@@ -5,7 +5,7 @@ This repo organizes everything I’m studying, practicing, and building across d
 
 ## 📚 Current Topics
 
-- [🛡️ Firewall Fundamentals](./Firewall/README.md)
+- [🛡️ Firewall Fundamentals]
 - [🌐 Networking](./Networking/README.md) (coming soon)
 - [🦠 Malware Analysis](./Malware-Analysis/README.md) (coming soon)
 - [🔒 Web Security](./Web-Security/README.md) (coming soon)
