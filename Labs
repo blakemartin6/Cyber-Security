@@ -1,0 +1,25 @@
+# 🛠️ Projects
+
+Welcome to the **Projects** directory of my cybersecurity lab! This section houses all hands-on labs, simulations, and exploratory builds I've worked on to deepen my understanding of networks, security protocols, operating systems, and more.
+
+Each project folder contains:
+- A **project overview** (`README.md` or `setup-guide.md`)
+- **Configuration files** and **scripts** used
+- Any **troubleshooting logs** or **notes**
+- Optional: Screenshots or diagrams for documentation
+
+## 📁 Current Projects
+
+### 🔐 Windows Server Lab (`/windows-server-lab`)
+A simulated internal network environment using Windows Server 2022 and Windows 10 VMs. Includes:
+- Static IP and DNS configuration
+- Active Directory setup
+- DHCP and reverse lookup zone
+- Custom Organizational Units (OUs)
+- Domain join and access group assignments
+
+More details available in the [project folder](./windows-server-lab).
+
+---
+
+Stay tuned for more hands-on labs and environments as I expand this portfolio!
